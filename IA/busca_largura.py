@@ -60,3 +60,12 @@ def bfs(start, goal):
     if goal in parent:
         node = goal
         while node:
+            path.append(node)
+            node = parent[node]
+        path.reverse()
+    return path
+
+path = bfs(start, goal)
+print("Caminho encontrado" if path else "Sem caminho!")
+for step in path:
+    print(step)
